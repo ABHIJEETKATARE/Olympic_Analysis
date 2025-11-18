@@ -1,0 +1,29 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata: 
+ name: olympic-analysis-deployment
+ namespace: olympic-analysis
+ labels:
+   app: olympicAnalysis
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: olympicAnalysis
+  template:
+    metadata:
+      labels:
+        app: olympicAnalysis
+    spec:
+      containers:
+        - name: olympic-analysis
+          image: abhijeetkt1/olympic_analysis
+          ports:
+            - containerPort: 8501
+          resources:
+            requests: 
+              cpu: 100m
+              memory: 128Mi
+            limits: 
+              cpu: 200m
+              memory: 256Mi

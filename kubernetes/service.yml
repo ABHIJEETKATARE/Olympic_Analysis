@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata: 
+  name: olympic-analysis-svc
+  namespace: olympic-analysis
+spec:
+  selector:
+    app: olympicAnalysis
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8501
+      nodePort: 31000
+  type: NodePort
