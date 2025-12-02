@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: olympic-analysis
-          image: abhijeetkt1/olympic_analysis
+          image: abhijeetkt1/olympic_analysis:
           ports:
             - containerPort: 8501
           resources:
